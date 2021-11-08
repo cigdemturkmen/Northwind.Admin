@@ -12,8 +12,16 @@ namespace Northwind.Web.Controllers
     {
         // GET: Home
         public ActionResult Index()
-        {
+        { // ddl olarak categorileri doldurmak...
+
             return View();
         }
     }
+
+    // category Controller ve rpoduct controller oluştur
+    // category ve product entitileri
+    // db'ye bu iki entity'i ekle.
+    // CRUD işlemlerini yapınız
+
+   
 }
