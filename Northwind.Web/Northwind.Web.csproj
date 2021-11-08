@@ -1793,7 +1793,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AuthController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Filters\AuthAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1802,8 +1804,13 @@
     <Compile Include="Migrations\202111080747099_Init.designer.cs">
       <DependentUpon>202111080747099_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202111081737365_NewTablesAdded.cs" />
+    <Compile Include="Migrations\202111081737365_NewTablesAdded.designer.cs">
+      <DependentUpon>202111081737365_NewTablesAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\BaseClass.cs" />
+    <Compile Include="Models\Entities\Category.cs" />
     <Compile Include="Models\Entities\NorthwindDbContext.cs" />
     <Compile Include="Models\Entities\Product.cs" />
     <Compile Include="Models\Entities\User.cs" />
@@ -1968,6 +1975,12 @@
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Shared\_LayoutMain.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Category\List.cshtml" />
+    <Content Include="Views\Category\Add.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1981,6 +1994,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202111080747099_Init.resx">
       <DependentUpon>202111080747099_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202111081737365_NewTablesAdded.resx">
+      <DependentUpon>202111081737365_NewTablesAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

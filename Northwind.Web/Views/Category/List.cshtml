@@ -1,0 +1,56 @@
+﻿@using Northwind.Web.Models.Entities
+@model List<Category>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_LayoutMain.cshtml";
+}
+
+@if (TempData["EditSuccessful"] != null)
+{
+    <div id="alertBox" class="alert alert-success" role="alert">
+        @TempData["EditSuccessful"]
+    </div>
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-6"><h2> Category List</h2></div>
+            <div class="col-6"><a href="/category/add" class="btn btn-success float-right">Add Category</a></div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Category Id</th>
+                    <th>Category Name</th>
+                    <th>Category Description</th>
+                    <th colspan="2"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var category in Model)
+                    {
+                        <tr>
+                            <td>@category.CategoryId</td>
+                            <td>@category.CategoryName</td>
+                            <td>@category.Description</td>
+                            <td><a class="btn btn-primary" href="/category/edit/@category.CategoryId" title="Edit"><i class="fa fa-edit"></i></a></td>
+                            <td><a class="btn btn-danger" href="/category/delete/@category.CategoryId" title="Delete"><i class="fa fa-trash"></i></a></td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="5">Listede hiçbir veri bulunmamaktadır</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
