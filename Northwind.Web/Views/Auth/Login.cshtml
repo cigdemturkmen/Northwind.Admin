@@ -1,0 +1,70 @@
+﻿@using Northwind.Web.Models.ViewModel
+@model LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+@if (ViewBag.Message != null)
+{
+<div class="alert alert-danger">@ViewBag.Message</div>
+}
+
+@*1. Tasarım, temadan login sayfasındaki tasarımı alın
+    2. LoginViewModel yapınız*@
+
+<div class="text-center">
+    <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+</div>
+@*<form class="user">*@
+
+@using (Html.BeginForm("Login", "Auth", FormMethod.Post, htmlAttributes: new { @class = "user" }))
+{
+    <div class="form-group">
+
+        @Html.AntiForgeryToken()
+
+        @*<input type="email" class="form-control form-control-user"
+            id="exampleInputEmail" aria-describedby="emailHelp"
+            placeholder="Enter Email Address...">*@
+
+        @Html.LabelFor(x => x.Email, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(x => x.Email, htmlAttributes: new { @class = "form-control form-control-user", placeholder = nameof(Model.Email) })
+        @Html.ValidationMessageFor(x => x.Email, "", htmlAttributes: new { @class = "text-danger" })  @*  mesajı attribute olarak eklediğimiz için buradaki açıklanma kısmını boş geçiyoruz.*@
+    </div>
+    <div class="form-group">
+        @*<input type="password" class="form-control form-control-user"
+            id="exampleInputPassword" placeholder="Password">*@
+
+        @Html.LabelFor(x => x.Password, htmlAttributes: new { @class = "control-label" })
+        @Html.TextBoxFor(x => x.Password, htmlAttributes: new { @class = "form-control form-control-user", type = "password", placeholder = nameof(Model.Password) })
+        @Html.ValidationMessageFor(x => x.Password, "", htmlAttributes: new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <div class="custom-control custom-checkbox small">
+            @*<input type="checkbox" class="custom-control-input" id="customCheck">
+                <label class="custom-control-label" for="customCheck">
+                    Remember
+                    Me
+                </label>*@
+
+            @Html.CheckBoxFor(x => x.RememberMe, htmlAttributes: new { @class = "custom-control-input" })
+            @Html.LabelFor(x => x.RememberMe, htmlAttributes: new { @class = "custom-control-label" })
+
+
+            @*@Html.CheckBoxFor(x => x.RememberMe, htmlAttributes: new { @class = "custom-control-input" })
+              @Html.LabelFor(x => x.RememberMe, htmlAttributes: new { @class = "control-label" })*@
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btn-user btn-block"> Login </button>
+}
+
+@*</form>*@
+
+<hr>
+<div class="text-center">
+    <a class="small" href="forgot-password.html">Forgot Password?</a>
+</div>
+<div class="text-center">
+    <a class="small" href="/auth/register">Create an Account!</a>
+</div>
