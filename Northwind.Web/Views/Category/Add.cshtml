@@ -26,11 +26,9 @@
             </div>
         }
 
-
-
         @using (@Html.BeginForm("Add", "Category", FormMethod.Post, htmlAttributes: new { @class = "" }))
         {
-            @Html.AntiForgeryToken();
+            //@Html.AntiForgeryToken();
 
             <div class="mb-3">
                 @Html.LabelFor(x => x.CategoryName, htmlAttributes: new { @class = "form-label" })

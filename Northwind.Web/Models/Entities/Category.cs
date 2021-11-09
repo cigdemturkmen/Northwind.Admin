@@ -18,10 +18,6 @@ namespace Northwind.Web.Models.Entities
 
         public string Description { get; set; }
 
-        public override string ToString()
-        {
-            var category = new Category();
-            return category.CategoryName;
-        }
+        public List<Product> Products { get; set; }
     }
 }

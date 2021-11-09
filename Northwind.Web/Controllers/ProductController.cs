@@ -59,7 +59,7 @@ namespace Northwind.Web.Controllers
             }
             else
             {
-                ViewBag.Message = "Bu isimde bir ürün mevcut. Lütfen başka bir ürün ismi giriniz.";
+                ViewBag.Message = "This product name already exists. Please write a different product name.";
                 return View(model);
             }
 
@@ -83,9 +83,10 @@ namespace Northwind.Web.Controllers
             }
             else
             {
-                TempData["Message"] = "Böyle bir ürün mevcut değil.";
+                TempData["Message"] = "This product does not exist!";
+                return RedirectToAction("Add", "Product");
             }
-            return RedirectToAction("Add", "Product");
+            return null;
         }
 
         [HttpPost]
@@ -106,14 +107,14 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
-                    TempData["EditSuccessful"] = "Güncelleme başarılı.";
+                    TempData["Message"] = "Product updated!";
                     return RedirectToAction("List", "Product");
                 }
             }
             return null;
         }
 
-        public ActionResult Deletet(int id)
+        public ActionResult Delete(int id)
         {
             var product = _db.Products.FirstOrDefault(x => x.ProductId == id);
 
@@ -125,6 +126,7 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
+                    TempData["Message"] = "Product deleted!";
                     return RedirectToAction("List", "Product");
                 }
             }

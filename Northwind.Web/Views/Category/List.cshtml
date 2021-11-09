@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
-@if (TempData["EditSuccessful"] != null)
+@if (TempData["Message"] != null)
 {
     <div id="alertBox" class="alert alert-success" role="alert">
-        @TempData["EditSuccessful"]
+        @TempData["Message"]
     </div>
 }
 
@@ -46,11 +46,10 @@
                 else
                 {
                     <tr>
-                        <td colspan="5">Listede hiçbir veri bulunmamaktadır</td>
+                        <td colspan="5">Listede hiçbir veri bulunmamaktadır.</td>
                     </tr>
                 }
             </tbody>
         </table>
-
     </div>
 </div>

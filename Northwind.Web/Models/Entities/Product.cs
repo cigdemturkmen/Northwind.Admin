@@ -17,6 +17,7 @@ namespace Northwind.Web.Models.Entities
 
 
         public int? CategoryId { get; set; }
+        public Category Category { get; set; }
 
         [StringLength(20, ErrorMessage = "Use maximum 20 characters")]
         public string QuantityPerUnit { get; set; }

@@ -12,9 +12,9 @@ namespace Northwind.Web.Models.Entities
 
         public NorthwindDbContext()
         {
-            this.Database.Connection.ConnectionString = "Server=. ; Database=NorthwindDev; User Id = sa ; Password =123;"; //içi boş bir database oluşturcaz
+            //this.Database.Connection.ConnectionString = "Server=. ; Database=NorthwindDev; User Id = sa ; Password =123;"; //içi boş bir database oluşturcaz
 
-            // this.Database.Connection.ConnectionString = "Server=. ; Database=NorthwindDev; User= sa ; Password = Password1";
+            this.Database.Connection.ConnectionString = "Server=. ; Database=NorthwindDev0; User= sa ; Password = Password1";
         }
 
         public DbSet<User> Users { get; set; }

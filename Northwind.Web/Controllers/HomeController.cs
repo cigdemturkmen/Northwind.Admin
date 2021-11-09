@@ -12,8 +12,9 @@ namespace Northwind.Web.Controllers
     {
         
         public ActionResult Index()
-        { // ddl olarak categorileri doldurmak...
-
+        { 
+            
+            // ddl olarak categorileri doldurmak...
             return View();
         }
     }

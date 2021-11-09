@@ -13,7 +13,7 @@ namespace Northwind.Web.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202111080747099_Init"; }
+            get { return "202111091431447_Init"; }
         }
         
         string IMigrationMetadata.Source

@@ -1800,13 +1800,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111080747099_Init.cs" />
-    <Compile Include="Migrations\202111080747099_Init.designer.cs">
-      <DependentUpon>202111080747099_Init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202111081737365_NewTablesAdded.cs" />
-    <Compile Include="Migrations\202111081737365_NewTablesAdded.designer.cs">
-      <DependentUpon>202111081737365_NewTablesAdded.cs</DependentUpon>
+    <Compile Include="Migrations\202111091431447_Init.cs" />
+    <Compile Include="Migrations\202111091431447_Init.designer.cs">
+      <DependentUpon>202111091431447_Init.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entities\BaseClass.cs" />
@@ -1992,11 +1988,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202111080747099_Init.resx">
-      <DependentUpon>202111080747099_Init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111081737365_NewTablesAdded.resx">
-      <DependentUpon>202111081737365_NewTablesAdded.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111091431447_Init.resx">
+      <DependentUpon>202111091431447_Init.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

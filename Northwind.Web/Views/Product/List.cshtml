@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutMain.cshtml";
 }
 
-@if (TempData["EditSuccessful"] != null)
+@if (TempData["Message"] != null)
 {
     <div id="alertBox" class="alert alert-success" role="alert">
-        @TempData["EditSuccessful"]
+        @TempData["Message"]
     </div>
 }
 

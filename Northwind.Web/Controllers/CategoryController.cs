@@ -33,7 +33,7 @@ namespace Northwind.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         public ActionResult Add(Category model)
         {
             if (!ModelState.IsValid)
@@ -49,12 +49,12 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
-                    TempData["EditSuccessful"] = "Böyle bir kategori mevcut değil.";
+                    TempData["Message"] = "Category added!";
                     return RedirectToAction("List", "Category");
                 }
             }
 
-            ViewBag.Message = "Bu isimde bir kategori mevcut. Lütfen başka bir kategori ismi giriniz.";
+            ViewBag.Message = "This category name already exists. Please write a different category name.";
             return View(model);
         }
 
@@ -69,9 +69,9 @@ namespace Northwind.Web.Controllers
             }
             else
             {
-                TempData["Message"] = "Böyle bir kategori mevcut değil.";
-            }
-            return RedirectToAction("Add", "Category");
+                TempData["Message"] = "Category is not found!";
+                return RedirectToAction("Add", "Category");
+            }     
         }
 
         [HttpPost]
@@ -89,7 +89,7 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
-                    TempData["EditSuccessful"] = "Güncelleme başarılı.";
+                    TempData["Message"] = " Category updated!";
                     return RedirectToAction("List", "Category");
                 }
             }      
@@ -108,7 +108,7 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
-                    
+                    TempData["Message"] = "Category deleted!";
                     return RedirectToAction("List", "Category");
                 }
             }
