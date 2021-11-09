@@ -49,6 +49,7 @@ namespace Northwind.Web.Controllers
 
                 if (sonuc > 0)
                 {
+                    TempData["EditSuccessful"] = "Böyle bir kategori mevcut değil.";
                     return RedirectToAction("List", "Category");
                 }
             }
